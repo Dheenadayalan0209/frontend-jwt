@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import api from "../api";
+import { Link } from "react-router-dom";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -60,9 +61,8 @@ const Login = () => {
 
       <p className="text-center mt-3">
         No account?
-        <span className="text-primary ms-1" style={{ cursor: "pointer" }}>
-          Register
-        </span>
+        
+        <Link className="text-primary ms-1" style={{ cursor: "pointer" }} to={"/src/pages/Register.jsx"}> Register</Link>
       </p>
     </form>
     </>
