@@ -33,58 +33,86 @@ const Register = () => {
 
   return (
     <div>
-      <form onSubmit={submit}>
-        <h2>Register</h2>
-        <input
-          required
-          value={form.name}
-          name="name"
-          placeholder="name"
-          onChange={change}
-        />
-        <input
-          value={form.email}
-          required
-          name="email"
-          placeholder="email"
-          onChange={change}
-        />
-        <input
-          value={form.password}
-          required
-          name="password"
-          placeholder="password"
-          onChange={change}
-        />
-        <input
-          value={form.imageUrl}
-          required
-          name="imageUrl"
-          placeholder="imageUrl"
-          onChange={change}
-        />
-        {/* ... */}
-        <select
-          value={form.role}
-          required
-          name="role"
-          defaultValue="user"
-          onChange={change}
-        >
-          <option value="user">user</option>
-          <option value="admin">admin</option>
-        </select>
-        {form.role === "admin" && (
-          <input
-            value={form.adminCode}
-            required
-            name="adminCode"
-            placeholder="admin code"
-            onChange={change}
-          />
-        )}
-        <button type="submit">register</button>
-      </form>
+      <form onSubmit={submit} className="container mt-4">
+  <h2 className="mb-3">Register</h2>
+
+  <div className="mb-3">
+    <input
+      required
+      value={form.name}
+      name="name"
+      placeholder="Name"
+      className="form-control"
+      onChange={change}
+    />
+  </div>
+
+  <div className="mb-3">
+    <input
+      required
+      value={form.email}
+      name="email"
+      placeholder="Email"
+      type="email"
+      className="form-control"
+      onChange={change}
+    />
+  </div>
+
+  <div className="mb-3">
+    <input
+      required
+      value={form.password}
+      name="password"
+      placeholder="Password"
+      type="password"
+      className="form-control"
+      onChange={change}
+    />
+  </div>
+
+  <div className="mb-3">
+    <input
+      required
+      value={form.imageUrl}
+      name="imageUrl"
+      placeholder="Image URL"
+      className="form-control"
+      onChange={change}
+    />
+  </div>
+
+  <div className="mb-3">
+    <select
+      value={form.role}
+      required
+      name="role"
+      className="form-select"
+      onChange={change}
+    >
+      <option value="user">user</option>
+      <option value="admin">admin</option>
+    </select>
+  </div>
+
+  {form.role === "admin" && (
+    <div className="mb-3">
+      <input
+        required
+        value={form.adminCode}
+        name="adminCode"
+        placeholder="Admin Code"
+        className="form-control"
+        onChange={change}
+      />
+    </div>
+  )}
+
+  <button className="btn btn-primary" type="submit">
+    Register
+  </button>
+</form>
+
     </div>
   );
 };
