@@ -62,7 +62,7 @@ const Login = () => {
       <p className="text-center mt-3">
         No account?
         
-        <Link className="text-primary ms-1" style={{ cursor: "pointer" }} to={"/Register.jsx"}> Register</Link>
+        <Link className="text-primary ms-1" style={{ cursor: "pointer" }} to={"/register"}> Register</Link>
       </p>
     </form>
     </>
