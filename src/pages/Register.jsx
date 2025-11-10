@@ -33,10 +33,10 @@ const Register = () => {
 
   return (
     <div>
-      <form onSubmit={submit} className="container mt-4">
+      <form onSubmit={submit} className="container mt-4  d-flex flex-column align-items-center">
   <h2 className="mb-3">Register</h2>
 
-  <div className="mb-3">
+  <div className="mb-3 w-50">
     <input
       required
       value={form.name}
@@ -47,7 +47,7 @@ const Register = () => {
     />
   </div>
 
-  <div className="mb-3">
+  <div className="mb-3 w-50">
     <input
       required
       value={form.email}
@@ -59,7 +59,7 @@ const Register = () => {
     />
   </div>
 
-  <div className="mb-3">
+  <div className="mb-3 w-50">
     <input
       required
       value={form.password}
@@ -71,7 +71,7 @@ const Register = () => {
     />
   </div>
 
-  <div className="mb-3">
+  <div className="mb-3 w-50">
     <input
       required
       value={form.imageUrl}
@@ -82,7 +82,7 @@ const Register = () => {
     />
   </div>
 
-  <div className="mb-3">
+  <div className="mb-3 w-50">
     <select
       value={form.role}
       required
