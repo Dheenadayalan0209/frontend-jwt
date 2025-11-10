@@ -18,7 +18,7 @@ const EditUser = () => {
       console.log(res.data);
     };
     getUser();
-  }, []);
+  }, [id]);
 
   const change = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -29,26 +29,37 @@ const EditUser = () => {
     await api.put(`/${id}`, form);
     nav("/admin");
   };
-  return (
-    <div>
-      <form onSubmit={submit}>
-        <input
-          placeholder="name"
-          name="name"
-          value={form.name}
-          onChange={change}
-        />
+ return (
+  <div className="container d-flex justify-content-center mt-5">
+    <form
+      onSubmit={submit}
+      className="p-4 border rounded w-50 shadow-sm d-flex flex-column gap-3"
+    >
+      <h3 className="text-center mb-3">Edit User</h3>
 
-        <input
-          placeholder="imageUrl"
-          name="imageUrl"
-          value={form.imageUrl}
-          onChange={change}
-        />
-        <button type="submit">edit</button>
-      </form>
-    </div>
-  );
+      <input
+        placeholder="name"
+        name="name"
+        value={form.name}
+        onChange={change}
+        className="form-control"
+      />
+
+      <input
+        placeholder="imageUrl"
+        name="imageUrl"
+        value={form.imageUrl}
+        onChange={change}
+        className="form-control"
+      />
+
+      <button type="submit" className="btn btn-success w-100">
+        Save
+      </button>
+    </form>
+  </div>
+);
+
 };
 
 export default EditUser;

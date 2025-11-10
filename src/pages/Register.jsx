@@ -32,87 +32,77 @@ const Register = () => {
   };
 
   return (
-    <div>
-      <form onSubmit={submit} className="container mt-4  d-flex flex-column align-items-center">
-  <h2 className="mb-3">Register</h2>
+    <div className="container d-flex justify-content-center mt-5">
+      <form
+        onSubmit={submit}
+        className="p-4 border rounded w-50 shadow-sm d-flex flex-column gap-3"
+      >
+        <h2 className="text-center mb-3">Register</h2>
 
-  <div className="mb-3 w-50">
-    <input
-      required
-      value={form.name}
-      name="name"
-      placeholder="Name"
-      className="form-control"
-      onChange={change}
-    />
-  </div>
+        <input
+          required
+          value={form.name}
+          name="name"
+          placeholder="name"
+          onChange={change}
+          className="form-control"
+        />
 
-  <div className="mb-3 w-50">
-    <input
-      required
-      value={form.email}
-      name="email"
-      placeholder="Email"
-      type="email"
-      className="form-control"
-      onChange={change}
-    />
-  </div>
+        <input
+          value={form.email}
+          required
+          name="email"
+          placeholder="email"
+          onChange={change}
+          className="form-control"
+        />
 
-  <div className="mb-3 w-50">
-    <input
-      required
-      value={form.password}
-      name="password"
-      placeholder="Password"
-      type="password"
-      className="form-control"
-      onChange={change}
-    />
-  </div>
+        <input
+          value={form.password}
+          required
+          name="password"
+          placeholder="password"
+          onChange={change}
+          className="form-control"
+          type="password"
+        />
 
-  <div className="mb-3 w-50">
-    <input
-      required
-      value={form.imageUrl}
-      name="imageUrl"
-      placeholder="Image URL"
-      className="form-control"
-      onChange={change}
-    />
-  </div>
+        <input
+          value={form.imageUrl}
+          required
+          name="imageUrl"
+          placeholder="imageUrl"
+          onChange={change}
+          className="form-control"
+        />
 
-  <div className="mb-3 w-50">
-    <select
-      value={form.role}
-      required
-      name="role"
-      className="form-select"
-      onChange={change}
-    >
-      <option value="user">user</option>
-      <option value="admin">admin</option>
-    </select>
-  </div>
+        <select
+          value={form.role}
+          required
+          name="role"
+          defaultValue="user"
+          onChange={change}
+          className="form-select"
+        >
+          <option value="user">user</option>
+          <option value="admin">admin</option>
+        </select>
 
-  {form.role === "admin" && (
-    <div className="mb-3">
-      <input
-        required
-        value={form.adminCode}
-        name="adminCode"
-        placeholder="Admin Code"
-        className="form-control"
-        onChange={change}
-      />
-    </div>
-  )}
+        {form.role === "admin" && (
+          <input
+            value={form.adminCode}
+            required
+            name="adminCode"
+            placeholder="admin code"
+            onChange={change}
+            className="form-control"
+          />
+        )}
 
-  <button className="btn btn-primary" type="submit">
-    Register
-  </button>
-</form>
-
+        <button type="submit" className="btn btn-primary w-100">
+          register
+        </button>
+      </form>
     </div>
   );
 };

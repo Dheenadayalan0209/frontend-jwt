@@ -25,17 +25,57 @@ const Admin = () => {
     confirm("user deleted");
     loadUsers();
   };
+
   return (
-    <div>
-      {users.map((user) => (
-        <p key={user._id}>
-          {user.name}-{user.role}
-          <br />
-          <button onClick={() => nav(`/edit/${user._id}`)}>edit</button>
-          <br />
-          <button onClick={() => deleteUser(user._id)}>delete</button>
+    <div className="container mt-4">
+      <h2 className="mb-4 text-center">Admin Panel</h2>
+
+      <div className="row g-4">
+  {users.map((user) => (
+    <div key={user._id} className="col-md-4 col-sm-6">
+      <div className="card p-4 shadow-sm text-center">
+
+        <img
+          src={user.imageUrl}
+          alt={user.name}
+          className="rounded-circle mx-auto"
+          width="120"
+          height="120"
+          style={{ objectFit: "cover" }}
+        />
+
+        <h5 className="mt-3 mb-1">{user.name}</h5>
+
+        <p className="mb-1">
+          <strong>Role:</strong> {user.role}
         </p>
-      ))}
+
+        <p className="text-muted small mb-3">
+          <strong>EMAIL ID:</strong> {user.email}
+        </p>
+
+        <div className="d-flex gap-2">
+          <button
+            className="btn btn-warning w-50"
+            onClick={() => nav(`/edit/${user._id}`)}
+          >
+            Edit
+          </button>
+
+          <button
+            className="btn btn-danger w-50"
+            onClick={() => deleteUser(user._id)}
+          >
+            Delete
+          </button>
+        </div>
+
+      </div>
+    </div>
+  ))}
+</div>
+
+
     </div>
   );
 };

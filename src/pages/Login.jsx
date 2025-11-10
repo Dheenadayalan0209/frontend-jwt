@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import api from "../api";
-import { Link } from "react-router-dom";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -20,32 +19,25 @@ const Login = () => {
       nav(res.data.role === "admin" ? "/admin" : "/");
       console.log(res.data);
     } catch (error) {
-      // alert(error.response?.data?.message || "login failed");
       alert(error.response?.data?.message);
     }
   };
-  //sdfghj
 
   return (
-    <>
+    <div className="container d-flex justify-content-center mt-5">
       <form
-      onSubmit={submit}
-      className="p-4 rounded shadow bg-white"
-      style={{ width: "350px", margin: "80px auto" }}
-    >
-      <h2 className="text-center mb-4">Login</h2>
+        onSubmit={submit}
+        className="p-4 border rounded w-50 shadow-sm d-flex flex-column gap-3"
+      >
+        <h2 className="text-center mb-3">Login</h2>
 
-      <div className="mb-3">
         <input
           placeholder="email"
-          type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           className="form-control"
         />
-      </div>
 
-      <div className="mb-3">
         <input
           placeholder="password"
           type="password"
@@ -53,19 +45,23 @@ const Login = () => {
           onChange={(e) => setPassword(e.target.value)}
           className="form-control"
         />
-      </div>
 
-      <button type="submit" className="btn btn-primary w-100">
-        Login
-      </button>
+        <button type="submit" className="btn btn-primary w-100">
+          Login
+        </button>
 
-      <p className="text-center mt-3">
-        No account?
-        
-        <Link className="text-primary ms-1" style={{ cursor: "pointer" }} to={"/register"}> Register</Link>
-      </p>
-    </form>
-    </>
+        <p className="text-center mt-2">
+          No account?
+          <span
+            className="text-primary ms-1"
+            role="button"
+            onClick={() => nav("/register")}
+          >
+            Register
+          </span>
+        </p>
+      </form>
+    </div>
   );
 };
 
