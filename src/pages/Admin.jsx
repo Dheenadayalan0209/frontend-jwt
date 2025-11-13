@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import api from "../api";
+import Navbar from "../components/Navbar";
 
 const Admin = () => {
   const [users, setUsers] = useState([]);
@@ -28,6 +29,7 @@ const Admin = () => {
 
   return (
     <div className="container mt-4">
+      <Navbar/>
       <h2 className="mb-4 text-center">Admin Panel</h2>
 
       <div className="row g-4">
