@@ -4,7 +4,7 @@ const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark px-3">
       <a className="navbar-brand" href="/">
-        DASHBOARD
+        CRUD operation
       </a>
 
       <button
@@ -19,22 +19,19 @@ const Navbar = () => {
       <div className="collapse navbar-collapse" id="navMenu">
         <ul className="navbar-nav ms-auto">
           <li className="nav-item">
-            <a className="nav-link" href="/">
+            <a className="nav-link" href="/home">
               Home
             </a>
           </li>
+          
 
           <li className="nav-item">
             <a className="nav-link" href="/login">
-              Login
+              Sign Up
             </a>
           </li>
 
-          <li className="nav-item">
-            <a className="nav-link" href="/register">
-              Register
-            </a>
-          </li>
+          
         </ul>
       </div>
     </nav>

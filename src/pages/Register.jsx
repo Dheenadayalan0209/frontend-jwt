@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import api from "../api";
+import Navbar from "../components/Navbar";
 
 const Register = () => {
   const [form, setForm] = useState({
@@ -32,6 +33,8 @@ const Register = () => {
   };
 
   return (
+    <>
+    <Navbar/>
     <div className="container d-flex justify-content-center mt-5">
       <form
         onSubmit={submit}
@@ -102,8 +105,19 @@ const Register = () => {
         <button type="submit" className="btn btn-primary w-100">
           register
         </button>
+        <p className="text-center mt-2">
+          if you have a account, please
+          <span
+            className="text-primary ms-1"
+            role="button"
+            onClick={() => nav("/login")}
+          >
+            Login
+          </span>
+        </p>
       </form>
     </div>
+    </>
   );
 };
 

@@ -3,7 +3,7 @@ import Navbar from "./components/Navbar";
 const AppLayout = () => {
   return (
     <div>
-      <Navbar />
+      
       <main style={{ padding: "30px" }}>
         <Outlet />
       </main>

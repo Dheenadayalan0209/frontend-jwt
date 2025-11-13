@@ -6,6 +6,8 @@ import Dashboard from "./pages/Dashboard";
 import Admin from "./pages/Admin";
 import EditUser from "./pages/EditUser";
 import NotFound from "./pages/NotFound";
+import Home from "./pages/Home";
+import Overview from "./components/Overview";
 
 const token = localStorage.getItem("accessToken");
 const isAuth = token ? true : false;
@@ -14,6 +16,7 @@ const isAdmin = () => localStorage.getItem("role") === "admin";
 // console.log(isAdmin());
 
 const router = createBrowserRouter([
+  
   {
     path: "/login",
     element: <Login />,
@@ -23,12 +26,17 @@ const router = createBrowserRouter([
     element: <Register />,
   },
   {
+    path:"/home",
+    element:<Home/>
+  },
+  {
     path: "/",
     element: <AppLayout />,
     children: [
-      { index: true, element: isAuth ? <Dashboard /> : <Login /> },
+      { index: true, element: <Home/> },
+      {path:"dashboard",element:isAuth ? <Dashboard/>:<Login/>},
 
-      { path: "admin", element: isAuth && isAdmin() ? <Admin /> : <Login /> },
+      { path: "admin", element: isAuth && isAdmin() ? <Admin /> : <Login/> },
 
       {
         path: "edit/:id",
