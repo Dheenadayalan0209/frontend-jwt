@@ -34,7 +34,7 @@ const Register = () => {
 
   return (
     <>
-    <Navbar/>
+    
     <div className="container d-flex justify-content-center mt-5">
       <form
         onSubmit={submit}

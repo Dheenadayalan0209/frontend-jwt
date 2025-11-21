@@ -33,7 +33,7 @@ const router = createBrowserRouter([
     path: "/",
     element: <AppLayout />,
     children: [
-      { index: true, element: <Home/> },
+      { index: true, element: <Login/> },
       {path:"dashboard",element:isAuth ? <Dashboard/>:<Login/>},
 
       { path: "admin", element: isAuth && isAdmin() ? <Admin /> : <Login/> },

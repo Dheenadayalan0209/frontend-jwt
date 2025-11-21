@@ -33,7 +33,7 @@ const Login = () => {
 
   return (
     <>
-      <Navbar />
+      
 
       <div className="container mt-5">
         <div className="row d-flex justify-content-center align-items-center">
